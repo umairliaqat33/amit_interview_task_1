@@ -33,6 +33,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
   final TextEditingController _otp4Controller = TextEditingController();
   final TextEditingController _otp5Controller = TextEditingController();
   final TextEditingController _otp6Controller = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -86,154 +87,160 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   ),
                   child: Column(
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          SizedBox(
-                            width: 50,
-                            child: TextFormFieldWidget(
-                              inputType: TextInputType.number,
-                              inputAction: TextInputAction.next,
-                              controller: _otp1Controller,
-                              validator: (value) {
-                                if (value == null) {
-                                  return "";
-                                } else {
-                                  return null;
-                                }
-                              },
-                              onChanged: (value) {
-                                if (value.isNotEmpty &&
-                                    _otp1Controller.text.length == 1) {
-                                  FocusScope.of(context).nextFocus();
-                                } else if (_otp1Controller.text.isEmpty) {
-                                  FocusScope.of(context).previousFocus();
-                                }
-                              },
-                              label: "",
+                      Form(
+                        key: _formKey,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            SizedBox(
+                              width: 50,
+                              child: TextFormFieldWidget(
+                                inputType: TextInputType.number,
+                                inputAction: TextInputAction.next,
+                                controller: _otp1Controller,
+                                validator: (value) {
+                                  if (value == null) {
+                                    return "";
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                                onChanged: (value) {
+                                  if (value.isNotEmpty &&
+                                      _otp1Controller.text.length == 1) {
+                                    FocusScope.of(context).nextFocus();
+                                  } else if (_otp1Controller.text.isEmpty) {
+                                    FocusScope.of(context).previousFocus();
+                                  }
+                                },
+                                label: "",
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 50,
-                            child: TextFormFieldWidget(
-                              inputType: TextInputType.number,
-                              inputAction: TextInputAction.next,
-                              controller: _otp2Controller,
-                              validator: (value) {
-                                if (value == null) {
-                                  return "";
-                                } else {
-                                  return null;
-                                }
-                              },
-                              onChanged: (value) {
-                                if (value.isNotEmpty &&
-                                    _otp2Controller.text.length == 1) {
-                                  FocusScope.of(context).nextFocus();
-                                } else if (_otp2Controller.text.isEmpty) {
-                                  FocusScope.of(context).previousFocus();
-                                }
-                              },
-                              label: "",
+                            SizedBox(
+                              width: 50,
+                              child: TextFormFieldWidget(
+                                inputType: TextInputType.number,
+                                inputAction: TextInputAction.next,
+                                controller: _otp2Controller,
+                                validator: (value) {
+                                  if (value == null) {
+                                    return "";
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                                onChanged: (value) {
+                                  if (value.isNotEmpty &&
+                                      _otp2Controller.text.length == 1) {
+                                    FocusScope.of(context).nextFocus();
+                                  } else if (_otp2Controller.text.isEmpty) {
+                                    FocusScope.of(context).previousFocus();
+                                  }
+                                },
+                                label: "",
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 50,
-                            child: TextFormFieldWidget(
-                              inputType: TextInputType.number,
-                              inputAction: TextInputAction.next,
-                              controller: _otp3Controller,
-                              validator: (value) {
-                                if (value == null) {
-                                  return "";
-                                } else {
-                                  return null;
-                                }
-                              },
-                              onChanged: (value) {
-                                if (value.isNotEmpty &&
-                                    _otp3Controller.text.length == 1) {
-                                  FocusScope.of(context).nextFocus();
-                                } else if (_otp3Controller.text.isEmpty) {
-                                  FocusScope.of(context).previousFocus();
-                                }
-                              },
-                              label: "",
+                            SizedBox(
+                              width: 50,
+                              child: TextFormFieldWidget(
+                                inputType: TextInputType.number,
+                                inputAction: TextInputAction.next,
+                                controller: _otp3Controller,
+                                validator: (value) {
+                                  if (value == null) {
+                                    return "";
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                                onChanged: (value) {
+                                  if (value.isNotEmpty &&
+                                      _otp3Controller.text.length == 1) {
+                                    FocusScope.of(context).nextFocus();
+                                  } else if (_otp3Controller.text.isEmpty) {
+                                    FocusScope.of(context).previousFocus();
+                                  }
+                                },
+                                label: "",
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 50,
-                            child: TextFormFieldWidget(
-                              inputType: TextInputType.number,
-                              inputAction: TextInputAction.next,
-                              controller: _otp4Controller,
-                              validator: (value) {
-                                if (value == null) {
-                                  return "";
-                                } else {
-                                  return null;
-                                }
-                              },
-                              onChanged: (value) {
-                                if (value.isNotEmpty &&
-                                    _otp4Controller.text.length == 1) {
-                                  FocusManager.instance.primaryFocus?.unfocus();
-                                } else if (_otp4Controller.text.isEmpty) {
-                                  FocusScope.of(context).previousFocus();
-                                }
-                              },
-                              label: "",
+                            SizedBox(
+                              width: 50,
+                              child: TextFormFieldWidget(
+                                inputType: TextInputType.number,
+                                inputAction: TextInputAction.next,
+                                controller: _otp4Controller,
+                                validator: (value) {
+                                  if (value == null) {
+                                    return "";
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                                onChanged: (value) {
+                                  if (value.isNotEmpty &&
+                                      _otp4Controller.text.length == 1) {
+                                    FocusManager.instance.primaryFocus
+                                        ?.unfocus();
+                                  } else if (_otp4Controller.text.isEmpty) {
+                                    FocusScope.of(context).previousFocus();
+                                  }
+                                },
+                                label: "",
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 50,
-                            child: TextFormFieldWidget(
-                              inputType: TextInputType.number,
-                              inputAction: TextInputAction.next,
-                              controller: _otp5Controller,
-                              validator: (value) {
-                                if (value == null) {
-                                  return "";
-                                } else {
-                                  return null;
-                                }
-                              },
-                              onChanged: (value) {
-                                if (value.isNotEmpty &&
-                                    _otp5Controller.text.length == 1) {
-                                  FocusManager.instance.primaryFocus?.unfocus();
-                                } else if (_otp5Controller.text.isEmpty) {
-                                  FocusScope.of(context).previousFocus();
-                                }
-                              },
-                              label: "",
+                            SizedBox(
+                              width: 50,
+                              child: TextFormFieldWidget(
+                                inputType: TextInputType.number,
+                                inputAction: TextInputAction.next,
+                                controller: _otp5Controller,
+                                validator: (value) {
+                                  if (value == null) {
+                                    return "";
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                                onChanged: (value) {
+                                  if (value.isNotEmpty &&
+                                      _otp5Controller.text.length == 1) {
+                                    FocusManager.instance.primaryFocus
+                                        ?.unfocus();
+                                  } else if (_otp5Controller.text.isEmpty) {
+                                    FocusScope.of(context).previousFocus();
+                                  }
+                                },
+                                label: "",
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 50,
-                            child: TextFormFieldWidget(
-                              inputType: TextInputType.number,
-                              inputAction: TextInputAction.next,
-                              controller: _otp6Controller,
-                              validator: (value) {
-                                if (value == null) {
-                                  return "";
-                                } else {
-                                  return null;
-                                }
-                              },
-                              onChanged: (value) {
-                                if (value.isNotEmpty &&
-                                    _otp6Controller.text.length == 1) {
-                                  FocusManager.instance.primaryFocus?.unfocus();
-                                } else if (_otp6Controller.text.isEmpty) {
-                                  FocusScope.of(context).previousFocus();
-                                }
-                              },
-                              label: "",
+                            SizedBox(
+                              width: 50,
+                              child: TextFormFieldWidget(
+                                inputType: TextInputType.number,
+                                inputAction: TextInputAction.next,
+                                controller: _otp6Controller,
+                                validator: (value) {
+                                  if (value == null) {
+                                    return "";
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                                onChanged: (value) {
+                                  if (value.isNotEmpty &&
+                                      _otp6Controller.text.length == 1) {
+                                    FocusManager.instance.primaryFocus
+                                        ?.unfocus();
+                                  } else if (_otp6Controller.text.isEmpty) {
+                                    FocusScope.of(context).previousFocus();
+                                  }
+                                },
+                                label: "",
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: SizeConfig.height20(context),
@@ -334,29 +341,31 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
   }
 
   Future<void> verifyCode() async {
-    try {
-      PhoneAuthCredential credential = PhoneAuthProvider.credential(
-        verificationId: widget.verificationId,
-        smsCode: _otp1Controller.text +
-            _otp3Controller.text +
-            _otp3Controller.text +
-            _otp4Controller.text +
-            _otp5Controller.text +
-            _otp6Controller.text,
-      );
-      UserCredential userCredential =
-          await FirebaseAuth.instance.signInWithCredential(credential);
-      if (userCredential.user != null) {
-        Fluttertoast.showToast(msg: "Verification Complete");
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => const NameScreen(),
-          ),
+    if (_formKey.currentState!.validate()) {
+      try {
+        PhoneAuthCredential credential = PhoneAuthProvider.credential(
+          verificationId: widget.verificationId,
+          smsCode: _otp1Controller.text +
+              _otp3Controller.text +
+              _otp3Controller.text +
+              _otp4Controller.text +
+              _otp5Controller.text +
+              _otp6Controller.text,
         );
+        UserCredential userCredential =
+            await FirebaseAuth.instance.signInWithCredential(credential);
+        if (userCredential.user != null) {
+          Fluttertoast.showToast(msg: "Verification Complete");
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const NameScreen(),
+            ),
+          );
+        }
+      } catch (e) {
+        log("Exception at otp verification: ${e.toString()}");
+        Fluttertoast.showToast(msg: e.toString());
       }
-    } catch (e) {
-      log("Exception at otp verification: ${e.toString()}");
-      Fluttertoast.showToast(msg: e.toString());
     }
   }
 }
