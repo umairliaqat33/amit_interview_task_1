@@ -23,7 +23,7 @@ class Utils {
 
   static String? nameValidator(String? value) {
     if (value!.isEmpty) {
-      return "Business name required";
+      return "Name is required";
     } else {
       return null;
     }
